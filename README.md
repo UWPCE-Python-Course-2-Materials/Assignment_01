@@ -55,7 +55,7 @@ Before writing any code into `main.py`, create a file called `test_main.py, whic
 
 Coverage analysis must show **100% test coverage on all files** once your code is complete.
 
-**As you write your code inside of `main.py`, make sure you add one or more tests in `test_main.py` before you write the code itself. This is basic premise of TDD: write the tests before the actual code. In this way, your tests and the rest of your code will be developed together. And you should have 100% ceverage as soon as the code is complete**
+**As you write your code inside of `main.py`, make sure you add one or more tests in `test_main.py` before you write the code itself. This is basic premise of TDD: write the tests before the actual code. In this way, your tests and the rest of your code will be developed together. And you should have 100% coverage as soon as the code is complete**
 
 ## Additional considerations for testing
 
@@ -101,20 +101,19 @@ The instructor will do the following:
 * In Python 3, you iterate through the values in a dictionary by iterating over `dict.values()`, where `dict` is the name of your dictionary.
 * If you use a `setUp()` method in your tests, keep in mind that it will run **before** every test, effectively resetting some of your variables.
 * The same goes for the `tearDown()` method, which will run after each one of your tests. Using both `setUp()` and `tearDown()` is optional.
-* Remember that `unittest` executes tests in **alphabetical** order, so `test_a` will run before `test_b`, and you should never count on even that ordering -- other test runners may use other ordering, or run tests in paralell, etc. Unit tests should always be written to be able to be run o theior own, and in any order. This is one of the reasons you should not have dependencies between unit tests.
+* Remember that `unittest` executes tests in **alphabetical** order, so `test_a` will run before `test_b`, and you should never count on even that ordering -- other test runners may use other ordering, or run tests in parallel, etc. Unit tests should always be written to be able to be run on their own, and in any order. This is one of the reasons you should not have dependencies between unit tests.
 * When testing `search_user()` and `search_status()`, keep in mind that those functions will return instances of `Users` and `UserStatus`, so you might need to consider asserting for fields such as `last_name` within those instances.
 
 # Note on `unittest` and `pytest` #
 
-## unitest ##
+## unittest ##
 
 The `unittest` package is a unit testing framework that is part of Python's standard library. All Python developers should be at least familiar with it. So this assignment is to be completed using the `unittest` framework (e.g. deriving tests from `unittest.TestCase`).
 
 ## pytest ##
 
-`pytest` is a unit testing framework, *and* a test runner. It will run `unittest` based tests jsut as well as native `pytest` tests (in fact, you can mix and match them if you like). The `pytest` test runner provides addition features and helpful output when used with `unitest` tests. Feel free to use `pytest` as a test runner for this assignment.
+`pytest` is a unit testing framework, *and* a test runner. It will run `unittest` based tests just as well as native `pytest` tests (in fact, you can mix and match them if you like). The `pytest` test runner provides addition features and helpful output when used with `unittest` tests. Feel free to use `pytest` as a test runner for this assignment.
 
 You may find the pytest-cov package helpful for running coverage along with your tests:
 
 https://pytest-cov.readthedocs.io/en/latest/
-
